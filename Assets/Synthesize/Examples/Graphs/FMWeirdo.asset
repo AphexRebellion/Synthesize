@@ -1,0 +1,328 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408c16952635acb48922b72ac3de4fb9, type: 3}
+  m_Name: FMWeirdo
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 114765213137441048}
+  - {fileID: 114305618759949940}
+  - {fileID: 114106954314319312}
+  - {fileID: 114606246261672216}
+  - {fileID: 114948772620314960}
+--- !u!114 &114106954314319312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca479846a8fe870488450c90f7bf8e4c, type: 3}
+  m_Name: Custom Wave Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -360, y: -8}
+  ports:
+    keys:
+    - Freq
+    - Amp
+    - FreqMod
+    - Output
+    values:
+    - _fieldName: Freq
+      _node: {fileID: 114106954314319312}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: 114606246261672216}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: Amp
+      _node: {fileID: 114106954314319312}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: 114948772620314960}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: FreqMod
+      _node: {fileID: 114106954314319312}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: Output
+      _node: {fileID: 114106954314319312}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: FreqMod
+        node: {fileID: 114305618759949940}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  Output: 0
+  Wave:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.23247066
+      value: 0.76843846
+      inSlope: -0.008539754
+      outSlope: -0.008539754
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.99676514
+      value: 0.004081726
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  Freq: 700
+  Amp: 1000
+  FreqMod: 0
+--- !u!114 &114305618759949940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2e4bc43c7ff484aa9412d547f6d5ab, type: 3}
+  m_Name: Wave Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -88, y: -120}
+  ports:
+    keys:
+    - Freq
+    - Amp
+    - PulseWidth
+    - FreqMod
+    - Output
+    values:
+    - _fieldName: Freq
+      _node: {fileID: 114305618759949940}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: Amp
+      _node: {fileID: 114305618759949940}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: PulseWidth
+      _node: {fileID: 114305618759949940}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: FreqMod
+      _node: {fileID: 114305618759949940}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: 114106954314319312}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: Output
+      _node: {fileID: 114305618759949940}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Mono
+        node: {fileID: 114765213137441048}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  Output: 0
+  WaveType: 0
+  Polarity: 0
+  Freq: 140
+  Amp: 1
+  PulseWidth: 0.25
+  FreqMod: 0
+  Invert: 0
+--- !u!114 &114606246261672216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6515f0ee59867074688b41aa5b97ea22, type: 3}
+  m_Name: Noise Ex Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -40}
+  ports:
+    keys:
+    - Freq
+    - Output
+    values:
+    - _fieldName: Freq
+      _node: {fileID: 114606246261672216}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: Output
+      _node: {fileID: 114606246261672216}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Freq
+        node: {fileID: 114106954314319312}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  Output: 0
+  Freq: 1.1
+  Min: 1
+  Max: 800
+  ChangeRate: 1
+  Seed: 0
+--- !u!114 &114765213137441048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a3d0d5d17f7664c8c1401c25a44ec6, type: 3}
+  m_Name: Output Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 200, y: -120}
+  ports:
+    keys:
+    - Mono
+    - Left
+    - Right
+    - MasterAmp
+    values:
+    - _fieldName: Mono
+      _node: {fileID: 114765213137441048}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: 114305618759949940}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: 114765213137441048}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: 114765213137441048}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: MasterAmp
+      _node: {fileID: 114765213137441048}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+  Mono: 0
+  Left: 0
+  Right: 0
+  MasterAmp: 1
+--- !u!114 &114948772620314960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6515f0ee59867074688b41aa5b97ea22, type: 3}
+  m_Name: Noise Ex Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: 136}
+  ports:
+    keys:
+    - Freq
+    - Output
+    values:
+    - _fieldName: Freq
+      _node: {fileID: 114948772620314960}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: Output
+      _node: {fileID: 114948772620314960}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Amp
+        node: {fileID: 114106954314319312}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  Output: 0
+  Freq: 1
+  Min: 600
+  Max: 1200
+  ChangeRate: 1
+  Seed: 1
